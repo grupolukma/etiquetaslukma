@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Gerador de Etiquetas - BlueTech</title>
+
+  <link rel="stylesheet" href="css/style.css"/>
+
+  <!-- Bibliotecas -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js" defer></script>
+
+  <script src="js/script.js" defer></script>
+</head>
+<body>
+  <!-- Abas no topo -->
+  <header class="tabs-header">
+    <div class="tabs-container">
+      <div class="brand">
+        <span class="brand-dot"></span>
+        <span class="brand-name">Lukma</span>
+      </div>
+      <nav class="tabs">
+        <button class="tab-btn active" data-tab="tab-gerar">Gerar Etiqueta</button>
+        <button class="tab-btn" data-tab="tab-consultar">Consultar Etiquetas</button>
+      </nav>
+    </div>
+  </header>
+
+  <main class="page">
+    <!-- Aba: Gerar -->
+    <section id="tab-gerar" class="tab-pane active">
+      <div class="main-container">
+        <div class="input-panel">
+          <h1 class="title">Gerador de Etiquetas</h1>
+          <p class="subtitle">Insira as informações e gere as etiquetas (100×30 mm).</p>
+
+          <div class="input-group">
+            <label for="pedido">Nº do Pedido</label>
+            <input type="text" id="pedido" placeholder="Ex: 3595287" autocomplete="off"/>
+          </div>
+
+          <div class="input-group">
+            <label for="quadro">Cód. do Quadro</label>
+            <input type="text" id="quadro" placeholder="Ex: 8848103" autocomplete="off"/>
+          </div>
+
+          <div class="input-group">
+            <label for="link_qrcode">Link do QR Code (URL)</label>
+            <input type="url" id="link_qrcode" placeholder="https://..." autocomplete="off"/>
+          </div>
+
+          <p class="data-info">Data (Automática): <span id="data_display"></span></p>
+
+          <button class="btn-generate" onclick="gerarEtiquetas()">GERAR E VISUALIZAR</button>
+        </div>
+
+        <div class="preview-panel">
+          <h2 class="preview-title">Visualização (100mm × 30mm)</h2>
+
+          <div class="container-etiquetas" id="containerEtiquetas"></div>
+
+          <div class="action-buttons-group" style="display:none" id="actionButtonsGroup">
+            <button id="btnPdf" class="btn-action btn-pdf" onclick="gerarPdfAbrirBaixar('containerEtiquetas','btnPdf')" disabled>GERAR PDF</button>
+            <button id="btnPng" class="btn-action btn-png" onclick="gerarPngAbrirBaixar('containerEtiquetas','btnPng')" disabled>GERAR PNG</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Aba: Consultar -->
+    <section id="tab-consultar" class="tab-pane">
+      <div class="main-container">
+        <!-- Lado esquerdo: tabela -->
+        <div class="input-panel">
+          <h1 class="title">Consultar Etiquetas</h1>
+          <p class="subtitle">Registros salvos no Google Sheets.</p>
+
+          <div class="table-wrap">
+            <table class="table">
+              <thead>
+                <tr>
+                  <th>ID</th>
+                  <th>Nº do Pedido</th>
+                  <th>Cód. do Quadro</th>
+                  <th>Ação</th>
+                  <th>Data</th>
+                </tr>
+              </thead>
+              <tbody id="tableBody">
+                <tr><td colspan="5" style="text-align:center;color:#777;">(sem dados)</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <!-- Lado direito: preview da consulta -->
+        <div class="preview-panel">
+          <h2 class="preview-title">Pré-visualização (consulta)</h2>
+          <div class="container-etiquetas" id="containerEtiquetasConsulta"></div>
+
+          <div class="action-buttons-group" id="actionButtonsGroupConsulta">
+            <button id="btnPdfConsulta" class="btn-action btn-pdf" onclick="gerarPdfAbrirBaixar('containerEtiquetasConsulta','btnPdfConsulta')" disabled>GERAR PDF</button>
+            <button id="btnPngConsulta" class="btn-action btn-png" onclick="gerarPngAbrirBaixar('containerEtiquetasConsulta','btnPngConsulta')" disabled>GERAR PNG</button>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- (Opcional) Silenciar ruído de extensões no console -->
+  <script>
+    window.addEventListener('unhandledrejection', (e) => {
+      const msg = String(e.reason || '');
+      if (msg.includes('message channel closed') || msg.includes('asynchronous response')) {
+        e.preventDefault();
+        console.warn('Aviso de extensão silenciado:', msg);
+      }
+    });
+  </script>
+</body>
+</html>
