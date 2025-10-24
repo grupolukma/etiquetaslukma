@@ -142,9 +142,9 @@ async function gerarPdfAbrirBaixar(containerId, btnId) {
 
   try {
     const canvas = await html2canvas(container, { scale: 4, useCORS: true, logging: false });
-    const pdf = new window.jspdf.jsPDF({ orientation: 'landscape', unit: 'mm', format: [100, 30] });
+    const pdf = new window.jspdf.jsPDF({ orientation: 'landscape', unit: 'mm', format: [105, 35] });
     const img = canvas.toDataURL('image/jpeg', 0.95);
-    pdf.addImage(img, 'JPEG', 0, 0, 100, 30);
+    pdf.addImage(img, 'JPEG', 0, 0, 105, 35);
 
     // tenta usar o pedido exibido nos inputs; se estiver vazio, usa 'etiquetas'
     const pedido = document.getElementById('pedido')?.value || 'etiquetas';

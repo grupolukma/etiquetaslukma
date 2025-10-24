@@ -72,9 +72,9 @@ body {
 }
 .btn-mini:hover { background-color: #0056b3; }
 
-/* ===== Etiqueta 100x30 mm ===== */
+/* ===== Etiqueta 105x35 mm ===== */
 .container-etiquetas {
-  width: 100mm; height: 30mm; display: flex; overflow: hidden;
+  width: 105mm; height: 35mm; display: flex; overflow: hidden;
   margin: 12px auto 0; border: 1px dashed #cbd5e1; background: #fff;
 }
 .container-etiquetas.capture-mode { overflow: visible !important; }
@@ -107,13 +107,13 @@ body {
 .table tbody tr:hover { background: #f8fafc; }
 
 /* ===== Impressão ===== */
-@page { size: 100mm 30mm; margin: 0; }
+@page { size: 105mm 35mm; margin: 0; }
 @media print {
   .tabs-header, .input-panel, .preview-title, .action-buttons-group { display: none !important; }
   body { margin: 0 !important; background: #fff !important; }
   .preview-panel { box-shadow: none !important; padding: 0 !important; margin: 0 !important; border-radius: 0 !important; }
   .container-etiquetas {
-    width: 100mm !important; height: 30mm !important; border: none !important; margin: 0 !important; padding: 0 !important;
+    width: 105mm !important; height: 35mm !important; border: none !important; margin: 0 !important; padding: 0 !important;
     -webkit-print-color-adjust: exact; print-color-adjust: exact;
   }
   .etiqueta-coluna { border-right: none !important; box-shadow: none !important; }
