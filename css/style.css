@@ -89,8 +89,8 @@ body {
 
 /* QR + Data (metade do QR e colada) */
 .area-qr-data { display: flex; align-items: center; justify-content: center; height: 18mm; margin-top: 2mm; gap: .25mm; }
-.area-qr { width: 22mm; height: 22mm; position: relative; }
-.area-qr canvas, .area-qr img { width: 22mm !important; height: 22mm !important; display: block; }
+.area-qr { width: 20mm; height: 20mm; position: relative; }
+.area-qr canvas, .area-qr img { width: 20mm !important; height: 20mm !important; display: block; }
 
 .data-lateral {
   transform: rotate(-90deg); transform-origin: center;
