@@ -17,11 +17,11 @@ body {
 }
 .tabs-container {
   max-width: 1200px; margin: 0 auto; padding: 10px 16px 0;
-  display: flex; align-items: end; justify-content: space-between; gap: 16px;
+  display: flex; align-items: end; justify-content: start; gap: 16px;
 }
 .brand { display: flex; align-items: center; gap: 8px; padding-bottom: 8px; }
-.brand-dot { width: 10px; height: 10px; border-radius: 50%; background: #3b82f6; }
-.brand-name { font-weight: 700; letter-spacing: .3px; color: #f1f5f9; }
+/*.brand-dot { width: 30px; height: 30px; border-radius: 50%; background: #3b82f6; }*/
+.brand-name { font-weight: 700; letter-spacing: .3px; color: #f1f5f9;  }
 .tabs { display: flex; gap: 4px; }
 .tab-btn {
   appearance: none; background: #1e293b; border: 1px solid #334155; border-bottom: none;
@@ -66,7 +66,7 @@ body {
 .btn-generate:hover { background: #2563eb; }
 .btn-generate:active { transform: translateY(1px); }
 .action-buttons-group { display: flex; flex-direction: column; gap: 10px; margin-top: 16px; }
-.btn-pdf { background: #ef4444; } .btn-pdf:hover { background: #dc2626; }
+.btn-pdf { background: #399e52; } .btn-pdf:hover { background: #4aca6a; }
 .btn-png { background: #475569; } .btn-png:hover { background: #334155; }
 .btn-action:disabled { opacity: .6; cursor: not-allowed; }
 

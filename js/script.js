@@ -66,7 +66,7 @@ function gerarQRCode(elementId, link) {
 
   const drawLogo = () => {
     ctx.imageSmoothingEnabled = false;
-    // ctx.fillStyle = '#fff';
+    // ctx.fillStyle = '#fff'; //fundo branco logo caso não tenha
     ctx.fillRect(bgX, bgY, bgSize, bgSize);
     ctx.drawImage(logoImg, logoX, logoY, logoSize, logoSize);
   };
