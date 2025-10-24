@@ -1,31 +1,35 @@
-/* ===== Base ===== */
+/* ===== Base (Tema Escuro Azul) ===== */
 * { box-sizing: border-box; }
 html, body { height: 100%; }
 body {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  color: #333; background: #f4f6f9; margin: 0;
+  color: #e2e8f0; 
+  background: #0f172a; /* Azul bem escuro */
+  margin: 0;
 }
 
 /* ===== Header / Abas ===== */
 .tabs-header {
-  position: sticky; top: 0; z-index: 100; background: #fff;
-  border-bottom: 1px solid #e5e7eb; box-shadow: 0 2px 8px rgba(0,0,0,.05);
+  position: sticky; top: 0; z-index: 100;
+  background: #1e293b; /* Fundo escuro do topo */
+  border-bottom: 1px solid #334155;
+  box-shadow: 0 2px 8px rgba(0,0,0,.4);
 }
 .tabs-container {
   max-width: 1200px; margin: 0 auto; padding: 10px 16px 0;
   display: flex; align-items: end; justify-content: space-between; gap: 16px;
 }
 .brand { display: flex; align-items: center; gap: 8px; padding-bottom: 8px; }
-.brand-dot { width: 10px; height: 10px; border-radius: 50%; background: #007bff; }
-.brand-name { font-weight: 700; letter-spacing: .3px; color: #0f172a; }
+.brand-dot { width: 10px; height: 10px; border-radius: 50%; background: #3b82f6; }
+.brand-name { font-weight: 700; letter-spacing: .3px; color: #f1f5f9; }
 .tabs { display: flex; gap: 4px; }
 .tab-btn {
-  appearance: none; background: #f8fafc; border: 1px solid #dbe0e6; border-bottom: none;
-  color: #334155; padding: 10px 16px; font-weight: 600; border-radius: 8px 8px 0 0;
+  appearance: none; background: #1e293b; border: 1px solid #334155; border-bottom: none;
+  color: #cbd5e1; padding: 10px 16px; font-weight: 600; border-radius: 8px 8px 0 0;
   cursor: pointer; transition: all .15s ease; min-width: 160px; text-align: center;
 }
-.tab-btn:hover { background: #eef2f7; }
-.tab-btn.active { background: #007bff; color: #fff; border-color: #007bff; box-shadow: 0 -1px 0 #007bff inset; }
+.tab-btn:hover { background: #334155; }
+.tab-btn.active { background: #3b82f6; color: #fff; border-color: #3b82f6; box-shadow: 0 -1px 0 #3b82f6 inset; }
 
 /* ===== Layout ===== */
 .page { max-width: 1200px; margin: 0 auto; padding: 16px; }
@@ -33,61 +37,62 @@ body {
 .tab-pane.active { display: block; }
 .main-container { display: flex; gap: 24px; align-items: flex-start; }
 .input-panel, .preview-panel {
-  background: #fff; border: 1px solid #e5e7eb; border-radius: 10px; padding: 24px;
-  box-shadow: 0 2px 8px rgba(0,0,0,.04);
+  background: #1e293b; border: 1px solid #334155; border-radius: 10px; padding: 24px;
+  box-shadow: 0 2px 8px rgba(0,0,0,.4);
 }
 .input-panel { flex: 1; min-width: 460px; }
 .preview-panel { flex: 1; }
 
 /* ===== Títulos/Inputs ===== */
-.title { color: #0f172a; font-size: 22px; margin: 0 0 6px; }
-.subtitle, .preview-title { color: #64748b; font-size: 14px; margin: 0 0 20px; }
+.title { color: #f1f5f9; font-size: 22px; margin: 0 0 6px; }
+.subtitle, .preview-title { color: #94a3b8; font-size: 14px; margin: 0 0 20px; }
 .input-group { margin-bottom: 14px; }
-.input-group label { display: block; font-weight: 700; font-size: 13px; color: #334155; margin-bottom: 6px; }
+.input-group label { display: block; font-weight: 700; font-size: 13px; color: #cbd5e1; margin-bottom: 6px; }
 .input-group input {
-  width: 100%; padding: 10px 12px; border: 1px solid #cbd5e1; border-radius: 8px;
-  background: #fff; outline: none; transition: border-color .15s ease, box-shadow .15s ease;
+  width: 100%; padding: 10px 12px; border: 1px solid #475569; border-radius: 8px;
+  background: #0f172a; color: #e2e8f0;
+  outline: none; transition: border-color .15s ease, box-shadow .15s ease;
 }
-.input-group input:focus { border-color: #007bff; box-shadow: 0 0 0 3px rgba(0,123,255,.12); }
-.data-info { font-size: 14px; color: #475569; margin: 12px 0 18px; }
-.data-info #data_display { font-weight: 700; color: #007bff; }
+.input-group input:focus { border-color: #3b82f6; box-shadow: 0 0 0 3px rgba(59,130,246,.25); }
+.data-info { font-size: 14px; color: #94a3b8; margin: 12px 0 18px; }
+.data-info #data_display { font-weight: 700; color: #60a5fa; }
 
 /* ===== Botões ===== */
 .btn-generate, .btn-action {
   width: 100%; padding: 12px; border: none; border-radius: 10px; font-weight: 800;
   cursor: pointer; color: #fff; transition: transform .05s ease, background .15s ease;
 }
-.btn-generate { background: #007bff; }
-.btn-generate:hover { background: #0b6ee6; }
+.btn-generate { background: #3b82f6; }
+.btn-generate:hover { background: #2563eb; }
 .btn-generate:active { transform: translateY(1px); }
 .action-buttons-group { display: flex; flex-direction: column; gap: 10px; margin-top: 16px; }
-.btn-pdf { background: #dc3545; } .btn-pdf:hover { background: #c82333; }
-.btn-png { background: #6c757d; } .btn-png:hover { background: #5a6268; }
+.btn-pdf { background: #ef4444; } .btn-pdf:hover { background: #dc2626; }
+.btn-png { background: #475569; } .btn-png:hover { background: #334155; }
 .btn-action:disabled { opacity: .6; cursor: not-allowed; }
 
 /* Botão mini na tabela */
 .btn-mini {
-  background-color: #007bff; color: #fff; border: none; border-radius: 6px;
+  background-color: #3b82f6; color: #fff; border: none; border-radius: 6px;
   padding: 6px 10px; cursor: pointer; font-size: 12px;
 }
-.btn-mini:hover { background-color: #0056b3; }
+.btn-mini:hover { background-color: #2563eb; }
 
 /* ===== Etiqueta 105x35 mm ===== */
 .container-etiquetas {
   width: 105mm; height: 35mm; display: flex; overflow: hidden;
-  margin: 12px auto 0; border: 1px dashed #cbd5e1; background: #fff;
+  margin: 12px auto 0; border: 1px dashed #475569; background: #0f172a;
 }
 .container-etiquetas.capture-mode { overflow: visible !important; }
 
 .etiqueta-coluna {
   width: 52.5mm; height: 35mm; box-sizing: border-box; padding: 2mm;
   display: flex; flex-direction: column; justify-content: space-between;
-  font-size: 8pt; line-height: 1.1; color: #0f172a; border-right: 1px solid #eee;
+  font-size: 8pt; line-height: 1.1; color: #e2e8f0; border-right: 1px solid #334155;
 }
 .etiqueta-coluna:last-child { border-right: none; }
-.cabecalho { font-weight: 800; color: #0f172a; text-align: center;}
+.cabecalho { font-weight: 800; color: #f1f5f9; text-align: center;}
 
-/* QR + Data (metade do QR e colada) */
+/* QR + Data */
 .area-qr-data { display: flex; align-items: center; justify-content: center; height: 18mm; margin-top: 2mm; gap: .25mm; }
 .area-qr { width: 20mm; height: 20mm; position: relative; }
 .area-qr canvas, .area-qr img { width: 20mm !important; height: 20mm !important; display: block; }
@@ -95,25 +100,26 @@ body {
 .data-lateral {
   transform: rotate(-90deg); transform-origin: center;
   height: 7.5mm; width: 4mm; display: flex; align-items: center; justify-content: center;
-  font-size: 2mm; line-height: 1; font-weight: 700; letter-spacing: .2mm; color: #0f172a;
+  font-size: 2mm; line-height: 1; font-weight: 700; letter-spacing: .2mm; color: #e2e8f0;
   margin-left: -1mm;
 }
 
 /* ===== Tabela ===== */
-.table-wrap { overflow: auto; border-radius: 10px; border: 1px solid #e5e7eb; }
-.table { width: 100%; border-collapse: collapse; font-size: 14px; }
-.table thead th { background: #f1f5f9; color: #334155; text-align: left; padding: 10px; border-bottom: 1px solid #e2e8f0; }
-.table tbody td { padding: 10px; border-bottom: 1px solid #f1f5f9; }
-.table tbody tr:hover { background: #f8fafc; }
+.table-wrap { overflow: auto; border-radius: 10px; border: 1px solid #334155; }
+.table { width: 100%; border-collapse: collapse; font-size: 14px; color: #e2e8f0; }
+.table thead th { background: #1e293b; color: #cbd5e1; text-align: left; padding: 10px; border-bottom: 1px solid #334155; }
+.table tbody td { padding: 10px; border-bottom: 1px solid #1e293b; }
+.table tbody tr:hover { background: #334155; }
 
-/* ===== Impressão ===== */
+/* ===== Impressão (mantém claro) ===== */
 @page { size: 105mm 35mm; margin: 0; }
 @media print {
   .tabs-header, .input-panel, .preview-title, .action-buttons-group { display: none !important; }
-  body { margin: 0 !important; background: #fff !important; }
+  body { margin: 0 !important; background: #fff !important; color: #000 !important; }
   .preview-panel { box-shadow: none !important; padding: 0 !important; margin: 0 !important; border-radius: 0 !important; }
   .container-etiquetas {
     width: 105mm !important; height: 35mm !important; border: none !important; margin: 0 !important; padding: 0 !important;
+    background: #fff !important; color: #000 !important;
     -webkit-print-color-adjust: exact; print-color-adjust: exact;
   }
   .etiqueta-coluna { border-right: none !important; box-shadow: none !important; }
