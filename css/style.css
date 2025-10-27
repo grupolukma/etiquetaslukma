@@ -80,7 +80,7 @@ body {
 /* ===== Etiqueta 105x35 mm ===== */
 .container-etiquetas {
   width: 105mm; height: 35mm; display: flex; overflow: hidden;
-  margin: 12px auto 0; border: 1px dashed #475569; background: #0f172a;
+  margin: 12px auto 0; border: 1px dashed #475569; background: #ffffff;
 }
 .container-etiquetas.capture-mode { overflow: visible !important; }
 
@@ -90,7 +90,7 @@ body {
   font-size: 8pt; line-height: 1.1; color: #e2e8f0; border-right: 1px solid #334155;
 }
 .etiqueta-coluna:last-child { border-right: none; }
-.cabecalho { font-weight: 800; color: #f1f5f9; text-align: center;}
+.cabecalho { font-weight: 800; color: #000000; text-align: center;}
 
 /* QR + Data */
 .area-qr-data { display: flex; align-items: center; justify-content: center; height: 18mm; margin-top: 2mm; gap: .25mm; }
@@ -100,7 +100,7 @@ body {
 .data-lateral {
   transform: rotate(-90deg); transform-origin: center;
   height: 7.5mm; width: 4mm; display: flex; align-items: center; justify-content: center;
-  font-size: 2mm; line-height: 1; font-weight: 700; letter-spacing: .2mm; color: #e2e8f0;
+  font-size: 2mm; line-height: 1; font-weight: 700; letter-spacing: .2mm; color: #000000;
   margin-left: -1mm;
 }
 

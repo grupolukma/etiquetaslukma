@@ -44,7 +44,7 @@ function gerarQRCode(elementId, link) {
   const size = 240; // alto DPI; CSS reduz p/ 15mm
   new QRCode(el, {
     text: link, width: size, height: size,
-    colorDark: '#000', colorLight: '#fff',
+    colorDark: '#000',
     correctLevel: QRCode.CorrectLevel.H
   });
 
