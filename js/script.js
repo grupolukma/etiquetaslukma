@@ -82,7 +82,7 @@ function montarEtiquetaNoContainer({ pedido, quadro, link, data }, containerId) 
     <div class="etiqueta-coluna">
       <div class="cabecalho">
         Pedido: ${pedido}<br>
-        Cód. Quadro: ${quadro}
+        Quadro: ${quadro}
       </div>
       <div class="area-qr-data">
         <div class="area-qr" id="${containerId}-qrcode-${id}"></div>
